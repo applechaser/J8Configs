@@ -10,4 +10,3 @@ class cfgPatches {
 };
 
 #include "CfgWeapons.hpp"
-#include "ace_wardrobe.hpp"
