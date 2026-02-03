@@ -1,5 +1,5 @@
 #define PREFIX J8
-#define COMPONENT main
+#define COMPONENT uksfcompat
 
 #include "\x\cba\addons\main\script_macros_common.hpp"
 

@@ -6,7 +6,7 @@ class cfgPatches {
         author = "applechaser";
         units[] = {};
         requiredVersion = 1.0;
-        requiredAddons[] = {"cba_main"};
+        requiredAddons[] = {"cba_main","P_UKSF_Gear"};
     };
 };
 

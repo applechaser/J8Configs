@@ -5,3 +5,4 @@ hemtt.exe
 *.biprivatekey
 .hemtt/missions/
 releases/
+.hemttprivatekey

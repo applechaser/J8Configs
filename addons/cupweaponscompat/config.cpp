@@ -6,8 +6,9 @@ class cfgPatches {
         author = "applechaser";
         units[] = {};
         requiredVersion = 1.0;
-        requiredAddons[] = {"cba_main"};
+        requiredAddons[] = {"cba_main", "CUP_Weapons_LoadOrder"};
+        skipWhenMissingDependencies = 1;
     };
 };
 
-#include "CfgWeapons.hpp"
+#include "CfgAmmo.hpp"
