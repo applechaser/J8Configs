@@ -12,3 +12,4 @@ class cfgPatches {
 };
 
 #include "cfgMagazines.hpp"
+#include "cfgWeapons.hpp"
