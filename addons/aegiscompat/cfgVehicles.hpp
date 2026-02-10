@@ -1,5 +1,4 @@
-class CfgVehicles
-{
+class CfgVehicles {
 	class O_R_Man_Base_F;
 	class O_R_Soldier_Base_F: O_R_Man_Base_F
 	{
@@ -384,7 +383,7 @@ class CfgVehicles
 	{
 		linkedItems[]=
 		{
-			"Aegis_V_ChestrigEast_RUtaiga_F",,
+			"Aegis_V_ChestrigEast_RUtaiga_F",
 			"H_HelmetLuchnik_cover_rutaiga_F",
 			"ItemGPS",
 			"ItemMap",
@@ -395,7 +394,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"Aegis_V_ChestrigEast_RUtaiga_F",,
+			"Aegis_V_ChestrigEast_RUtaiga_F",
 			"H_HelmetLuchnik_cover_rutaiga_F",
 			"ItemGPS",
 			"ItemMap",
@@ -409,7 +408,7 @@ class CfgVehicles
 	{
 		linkedItems[]=
 		{
-			"Aegis_V_ChestrigEast_RUtaiga_F",,
+			"Aegis_V_ChestrigEast_RUtaiga_F",
 			"H_HelmetLuchnik_cover_rutaiga_F",
 			"ItemGPS",
 			"ItemMap",
@@ -420,7 +419,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"Aegis_V_ChestrigEast_RUtaiga_F",,
+			"Aegis_V_ChestrigEast_RUtaiga_F",
 			"H_HelmetLuchnik_cover_rutaiga_F",
 			"ItemGPS",
 			"ItemMap",
@@ -434,7 +433,7 @@ class CfgVehicles
 	{
 		linkedItems[]=
 		{
-			"Aegis_V_ChestrigEast_RUtaiga_F",,
+			"Aegis_V_ChestrigEast_RUtaiga_F",
 			"H_HelmetLuchnik_cover_rutaiga_F",
 			"ItemGPS",
 			"ItemMap",
@@ -445,7 +444,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"Aegis_V_ChestrigEast_RUtaiga_F",,
+			"Aegis_V_ChestrigEast_RUtaiga_F",
 			"H_HelmetLuchnik_cover_rutaiga_F",
 			"ItemGPS",
 			"ItemMap",
@@ -459,7 +458,7 @@ class CfgVehicles
 	{
 		linkedItems[]=
 		{
-			"V_TacVest_oli",,
+			"V_TacVest_oli",
 			"H_CrewHelmetHeli_I_E",
 			"ItemGPS",
 			"ItemMap",
@@ -469,7 +468,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"V_TacVest_oli",,
+			"V_TacVest_oli",
 			"H_CrewHelmetHeli_I_E",
 			"ItemGPS",
 			"ItemMap",
@@ -482,7 +481,7 @@ class CfgVehicles
 	{
 		linkedItems[]=
 		{
-			"V_TacVest_oli",,
+			"V_TacVest_oli",
 			"H_PilotHelmetHeli_O",
 			"ItemGPS",
 			"ItemMap",
@@ -492,7 +491,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"V_TacVest_oli",,
+			"V_TacVest_oli",
 			"H_PilotHelmetHeli_O",
 			"ItemGPS",
 			"ItemMap",
@@ -1274,7 +1273,7 @@ class CfgVehicles
 		uniformClass="Aegis_U_O_Luchnik_arid_F";
 		linkedItems[]=
 		{
-			"Aegis_V_ChestrigEast_RUarid_F",,
+			"Aegis_V_ChestrigEast_RUarid_F",
 			"H_HelmetLuchnik_cover_rutaiga_F",
 			"ItemGPS",
 			"ItemMap",
@@ -1285,7 +1284,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"Aegis_V_ChestrigEast_RUarid_F",,
+			"Aegis_V_ChestrigEast_RUarid_F",
 			"H_HelmetLuchnik_cover_ruarid_F",
 			"ItemGPS",
 			"ItemMap",
@@ -1300,7 +1299,7 @@ class CfgVehicles
 		uniformClass="Aegis_U_O_Luchnik_arid_F";
 		linkedItems[]=
 		{
-			"Aegis_V_ChestrigEast_RUarid_F",,
+			"Aegis_V_ChestrigEast_RUarid_F",
 			"H_HelmetLuchnik_cover_ruarid_F",
 			"ItemGPS",
 			"ItemMap",
@@ -1311,7 +1310,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"Aegis_V_ChestrigEast_RUarid_F",,
+			"Aegis_V_ChestrigEast_RUarid_F",
 			"H_HelmetLuchnik_cover_ruarid_F",
 			"ItemGPS",
 			"ItemMap",
@@ -1326,7 +1325,7 @@ class CfgVehicles
 		uniformClass="Aegis_U_O_Luchnik_arid_F";
 		linkedItems[]=
 		{
-			"Aegis_V_ChestrigEast_RUarid_F",,
+			"Aegis_V_ChestrigEast_RUarid_F",
 			"H_HelmetLuchnik_cover_ruarid_F",
 			"ItemGPS",
 			"ItemMap",
@@ -1337,7 +1336,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"Aegis_V_ChestrigEast_RUarid_F",,
+			"Aegis_V_ChestrigEast_RUarid_F",
 			"H_HelmetLuchnik_cover_ruarid_F",
 			"ItemGPS",
 			"ItemMap",
@@ -1352,7 +1351,7 @@ class CfgVehicles
 		uniformClass="Aegis_U_O_Luchnik_arid_F";
 		linkedItems[]=
 		{
-			"V_TacVest_oli",,
+			"V_TacVest_oli",
 			"H_CrewHelmetHeli_I_E",
 			"ItemGPS",
 			"ItemMap",
@@ -1362,7 +1361,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"V_TacVest_oli",,
+			"V_TacVest_oli",
 			"H_CrewHelmetHeli_I_E",
 			"ItemGPS",
 			"ItemMap",
@@ -1376,7 +1375,7 @@ class CfgVehicles
 		uniformClass="Aegis_U_O_Luchnik_arid_F";
 		linkedItems[]=
 		{
-			"V_TacVest_oli",,
+			"V_TacVest_oli",
 			"H_PilotHelmetHeli_O",
 			"ItemGPS",
 			"ItemMap",
@@ -1386,7 +1385,7 @@ class CfgVehicles
 		};
 		respawnLinkedItems[]=
 		{
-			"V_TacVest_oli",,
+			"V_TacVest_oli",
 			"H_PilotHelmetHeli_O",
 			"ItemGPS",
 			"ItemMap",
@@ -1774,4 +1773,4 @@ class CfgVehicles
 			"Aegis_Goggles_Cover_F"
 		};
 	};
-}
+};

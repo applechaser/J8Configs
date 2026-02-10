@@ -9,3 +9,4 @@ CUP Smaw spotting round trajectory fix
 UKSF vest capacity and weight changed
 XM250 box weight decreased from 6.7 to 3lbs
 xm250 now supports barrel swaps
+Aegis uses luchnik uniform
