@@ -6,7 +6,7 @@ class cfgPatches {
         author = "applechaser";
         units[] = {};
         requiredVersion = 1.0;
-        requiredAddons[] = {"cba_main", "loadorder_f_vietnam"};
+        requiredAddons[] = {"cba_main", "EF_Weapons"};
         skipWhenMissingDependencies = 1;
     };
 };
