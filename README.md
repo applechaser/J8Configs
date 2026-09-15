@@ -14,3 +14,5 @@ currently implemented:
 * Aegis uses luchnik uniform
 * JAM project QBZs now only accept 30rnd mags
 * changed weight of GX Drones black hornet
+* integrate ace realistic dispersion mod
+* fix ACE NLAW seeker (thanks Jochem)
