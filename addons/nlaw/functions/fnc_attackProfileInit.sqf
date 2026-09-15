@@ -21,7 +21,7 @@ private _tracking = !isPlayer _shooter || {
 };
 if (_tracking && {_sampleWeapon == _weapon} && {count _samples >= 2}) then {
     private _firstTime = (_samples select 0) select 0;
-    private _lastTime = (_samples select ((count _samples) - 1)) select 0;
+    private _lastTime = (_samples select - 1) select 0;
     // Incomplete or stale tracking gives zero lead, never target-derived lead.
     if (_lastTime - _firstTime >= 0.75 && {_now - _lastTime <= 0.3}) then {
         private _n = count _samples;

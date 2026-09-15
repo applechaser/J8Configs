@@ -34,12 +34,12 @@ J8_nlaw_samplePFH = [{
                 _history params ["_oldWeapon", "_samples"];
                 if (_weapon != _oldWeapon || {
                     _samples isNotEqualTo [] && {
-                        _now - ((_samples select ((count _samples) - 1)) select 0) > 0.3
+                        _now - ((_samples select - 1) select 0) > 0.3
                     }
                 }) then { _samples = []; };
                 ((_unit weaponDirection _weapon) call CBA_fnc_vect2Polar) params ["", "_yaw", "_pitch"];
                 if (_samples isNotEqualTo []) then {
-                    private _last = _samples select ((count _samples) - 1);
+                    private _last = _samples select - 1;
                     _yaw = (_last select 1) + ([_yaw - (_last select 1)] call CBA_fnc_simplifyAngle180);
                     _pitch = (_last select 2) + ([_pitch - (_last select 2)] call CBA_fnc_simplifyAngle180);
                 };
