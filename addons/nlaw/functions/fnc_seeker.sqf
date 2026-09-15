@@ -3,16 +3,11 @@
  * Swept 0.25 m samples prevent tunnelling; each sample must be after fuze
  * arming. The first FIRE/VIEW surface blocks the sensor, including buildings.
  */
-params ["", "_args", "_state", "", "_dt"];
+params ["", "_args", "_state"];
 private _projectile = (_args select 0) select 6;
 if (!local _projectile || {!alive _projectile}) exitWith { [0, 0, 0] };
-if (isGamePaused || {_dt <= 0}) exitWith { [0, 0, 0] };
-_state params ["_lastPos", "_lastSpeed", "_overfly", "_detonated", "_remaining", "_armingRemaining"];
-// ACE supplies simulation seconds. One countdown owns arming for both modes.
-// A fraction >1 means unarmed throughout this step; <=0 means already armed.
-private _armedFraction = _armingRemaining / _dt;
-_state set [5, 0 max (_armingRemaining - _dt)];
-_projectile setVariable ["J8_nlaw_armed", _armedFraction <= 1];
+if (isGamePaused || {!(_projectile getVariable ["J8_nlaw_armed", false])}) exitWith { [0, 0, 0] };
+_state params ["_lastPos", "_lastSpeed", "_overfly", "_detonated", "_remaining"];
 if (!_overfly || {_detonated}) exitWith { [0, 0, 0] };
 private _position = getPosASL _projectile;
 private _segment = _position vectorDiff _lastPos;
@@ -35,7 +30,7 @@ for "_i" from 0 to _steps do {
         private _burstFraction = 0 max ((_burstDistance / _length) min 1);
         _burst = _lastPos vectorAdd (_segment vectorMultiply _burstFraction);
     };
-    if (_burstDistance < 0 && {_fraction >= _armedFraction}) then {
+    if (_burstDistance < 0) then {
         private _hits = lineIntersectsSurfaces [
             _sample, _sample vectorAdd (_down vectorMultiply 5),
             _projectile, objNull, true, 1, "FIRE", "VIEW"

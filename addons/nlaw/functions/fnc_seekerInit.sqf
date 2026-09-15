@@ -4,12 +4,22 @@ private _position = getPosASL (_firedEH select 6);
 private _state = _states select 1;
 { _state set [_forEachIndex, _x]; } forEach [
     _position, vectorMagnitude velocity (_firedEH select 6),
-    (_launchParams select 3) == "ace_nlaw_overflyTopAttack", false, -1, 0.2 // Shared DA/OTA arming delay, simulation seconds.
+    (_launchParams select 3) == "ace_nlaw_overflyTopAttack", false, -1
 ];
 
 private _projectile = _firedEH select 6;
-if (!local _projectile || {_state select 2}) exitWith {};
+if (!local _projectile) exitWith {};
 _projectile setVariable ["J8_nlaw_armed", false];
+// One game-time delay arms both modes; CBA accounts for accTime.
+[{
+    params ["_projectile", "_state"];
+    if (!local _projectile || {!alive _projectile}) exitWith {};
+    // Start the OTA sweep here, excluding all travel before arming.
+    _state set [0, getPosASL _projectile];
+    _state set [1, vectorMagnitude velocity _projectile];
+    _projectile setVariable ["J8_nlaw_armed", true];
+}, [_projectile, _state], 0.2] call CBA_fnc_waitAndExecute;
+if (_state select 2) exitWith {};
 _projectile addEventHandler ["HitPart", {
     params ["_projectile", "", "", "_position", "_velocity"];
     // One jet per impact, spawned outside the armour so penetration is simulated.
