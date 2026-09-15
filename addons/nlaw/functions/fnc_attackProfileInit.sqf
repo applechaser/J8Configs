@@ -7,7 +7,7 @@ _firedEH params ["_shooter", "_weapon", "", "", "", "", "_projectile"];
 _launchParams params ["", "_targetLaunchParams", "", "_mode"];
 _stateParams params ["", "", "_profileState"];
 
-private _now = missionNamespace getVariable ["J8_nlaw_simTime", 0];
+private _now = time;
 private _los = _shooter weaponDirection _weapon;
 if (vectorMagnitude _los < 0.5) then { _los = vectorDir _projectile; };
 (_los call CBA_fnc_vect2Polar) params ["", "_yaw", "_pitch"];
@@ -64,6 +64,6 @@ _stateParams set [3, [false, [0, 0, 0]]];
 
 // Only the attack profile reads this state during flight.
 { _profileState set [_forEachIndex, _x]; } forEach [
-    _now, _launchPos, _yaw, _pitch, _yawChange, _pitchChange,
+    0, _launchPos, _yaw, _pitch, _yawChange, _pitchChange,
     _mode == "ace_nlaw_overflyTopAttack"
 ];

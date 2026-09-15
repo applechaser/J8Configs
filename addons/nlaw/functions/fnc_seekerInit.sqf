@@ -2,22 +2,19 @@
 params ["_firedEH", "_launchParams", "", "", "_states"];
 private _position = getPosASL (_firedEH select 6);
 private _state = _states select 1;
-// This clock accumulates diag_deltaTime * accTime and stops while paused.
-private _now = missionNamespace getVariable ["J8_nlaw_simTime", 0];
-private _armAt = _now + 0.2;
 { _state set [_forEachIndex, _x]; } forEach [
-    _position, vectorMagnitude velocity (_firedEH select 6), _now,
-    (_launchParams select 3) == "ace_nlaw_overflyTopAttack", false, -1, _armAt
+    _position, vectorMagnitude velocity (_firedEH select 6),
+    (_launchParams select 3) == "ace_nlaw_overflyTopAttack", false, -1, 0.2 // Shared DA/OTA arming delay, simulation seconds.
 ];
 
 private _projectile = _firedEH select 6;
-if (!local _projectile || {_state select 3}) exitWith {};
-_projectile setVariable ["J8_nlaw_armAt", _armAt];
+if (!local _projectile || {_state select 2}) exitWith {};
+_projectile setVariable ["J8_nlaw_armed", false];
 _projectile addEventHandler ["HitPart", {
     params ["_projectile", "", "", "_position", "_velocity"];
     // One jet per impact, spawned outside the armour so penetration is simulated.
     _projectile removeEventHandler ["HitPart", _thisEventHandler];
-    if ((missionNamespace getVariable ["J8_nlaw_simTime", 0]) < (_projectile getVariable "J8_nlaw_armAt")) exitWith {};
+    if !(_projectile getVariable ["J8_nlaw_armed", false]) exitWith {};
     private _direction = vectorNormalized _velocity;
     if (_direction isEqualTo [0, 0, 0]) then { _direction = vectorDir _projectile; };
     private _spawn = _position vectorDiff (_direction vectorMultiply 0.2);

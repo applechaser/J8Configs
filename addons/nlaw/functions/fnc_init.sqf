@@ -4,16 +4,13 @@
  * All machines run this, including dedicated servers and headless clients.
  */
 if (!isNil "J8_nlaw_samplePFH") exitWith {};
-J8_nlaw_simTime = 0;
-J8_nlaw_nextSample = 0;
 J8_nlaw_samplePFH = [{
-    // Match ACE's simulation timestep. CBA_missionTime gates updates on Arma
-    // `time` changing; at high FPS/slow motion that clock can stop advancing.
+    params ["_samplingState"];
     if (isGamePaused || {accTime <= 0}) exitWith {};
-    J8_nlaw_simTime = J8_nlaw_simTime + diag_deltaTime * accTime;
-    private _now = J8_nlaw_simTime;
-    if (_now < J8_nlaw_nextSample) exitWith {};
-    J8_nlaw_nextSample = _now + 0.05;
+    // Pre-launch tracking uses engine simulation time; flight uses ACE's timestep.
+    private _now = time;
+    if (_now < (_samplingState select 0)) exitWith {};
+    _samplingState set [0, _now + 0.05];
     {
         private _unit = _x;
         if (local _unit) then {
@@ -49,4 +46,4 @@ J8_nlaw_samplePFH = [{
             };
         };
     } forEach allUnits;
-}, 0] call CBA_fnc_addPerFrameHandler;
+}, 0, [0]] call CBA_fnc_addPerFrameHandler;

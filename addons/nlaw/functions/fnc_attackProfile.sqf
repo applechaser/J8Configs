@@ -2,11 +2,12 @@
  * PLOS prediction and DA/OTA trajectory shaping belong here exclusively.
  * The seeker position is deliberately unused: this weapon has no homing.
  */
-params ["", "_args", "_state"];
+params ["", "_args", "_state", "_dt"];
 private _projectile = (_args select 0) select 6;
 if (!alive _projectile) exitWith { [0, 0, 0] };
-_state params ["_launchTime", "_origin", "_yaw", "_pitch", "_yawRate", "_pitchRate", "_overfly"];
-private _elapsed = 0 max ((missionNamespace getVariable ["J8_nlaw_simTime", 0]) - _launchTime);
+_state params ["_elapsed", "_origin", "_yaw", "_pitch", "_yawRate", "_pitchRate", "_overfly"];
+if (!isGamePaused) then { _elapsed = _elapsed + (0 max _dt); };
+_state set [0, _elapsed];
 private _distance = (getPosASL _projectile) distance _origin;
 private _velocity = velocity _projectile;
 private _currentYaw = _yaw + _yawRate * _elapsed;
